@@ -1,0 +1,50 @@
+<resources>
+    <string name="app_name">ReadMate</string>
+
+    <!-- Home -->
+    <string name="profile_edit">Editar perfil</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="user_unknown">Usuario desconocido</string>
+    <string name="user_pic">Foto de perfil</string>
+    <string name="profile_title">Tú</string>
+    <string name="main_menu">Inicio</string>
+    <string name="task_list">Lista de tareas</string>
+    <string name="task_create">Crear nueva tarea</string>
+
+    <!-- Login -->
+    <string name="app_logo">Logo de ReadMate</string>
+    <string name="init_old">Bienvenido, lector</string>
+    <string name="email">Correo electrónico</string>
+    <string name="pass">Contraseña</string>
+    <string name="pass_confirmation">Confirmar contraseña</string>
+    <string name="sign_in">INICIAR SESIÓN</string>
+    <string name="dont_account">¿No tienes una cuenta?</string>
+    <string name="not_account">Crear una nueva cuenta</string>
+
+    <!-- Register -->
+    <string name="init_new">Encantado de conocerte</string>
+    <string name="create_account">CREAR CUENTA</string>
+    <string name="ex_account">¿Ya tienes una cuenta?</string>
+    <string name="login">Iniciar sesión</string>
+    <string name="name">Nombre y Apellido</string>
+    <string name="pass_show">Mostrar contraseña</string>
+    <string name="pass_hide">Ocultar contraseña</string>
+    <string name="pass_match">Las contraseñas no coinciden</string>
+
+    <!-- Profile -->
+    <string name="save">Guardar</string>
+
+    <!-- Error -->
+    <string name="error_invalid_credentials">Correo o contraseña incorrectos</string>
+    <string name="error_user_disabled">Esta cuenta ha sido deshabilitada</string>
+    <string name="error_too_many_attempts">Demasiados intentos fallidos, inténtalo más tarde</string>
+    <string name="error_server">Error de conexión con el servidor</string>
+    <string name="error_empty_fields">Los campos no pueden estar vacíos</string>
+    <string name="error_invalid_email">Dirección de correo inválida</string>
+    <string name="error_invalid_username">Introduce tu nombre y apellido</string>
+    <string name="error_invalid_password">La contraseña debe tener al menos 6 caracteres y una mayúscula</string>
+    <string name="error_saving_user">Error al guardar los datos del usuario.</string>
+    <string name="error_getting_user_id">Error al obtener el ID del usuario.</string>
+    <string name="error_unknown">Error desconocido</string>
+
+</resources>

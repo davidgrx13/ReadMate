@@ -1,0 +1,164 @@
+@startuml
+top to bottom direction
+' Paquete DATA
+package data {
+  package model {
+    class Book
+    class ReadingDay
+    class ReadingGoal
+  }
+
+  package preferences {
+    class UserPreferences
+  }
+
+  package repository {
+    class AuthRepository
+    class BookRepository
+    class DailyGoalRepository
+    class ProgressRepository
+    class ReadingTimeRepository
+  }
+}
+
+' Paquete UI
+package ui {
+   left to right direction
+  package components {
+    class BookCard
+    class BottomNavBar
+    class CommonButtons
+    class HomeBookCard
+    class UserCard
+    class WishlistBookCard
+  }
+
+  package navigation {
+    class MainNavHost
+    class Routes
+  }
+
+  package screens {
+    package book {
+      class BookDetailScreen
+      class BookDetailViewModel
+    }
+
+    package discover {
+      class DiscoverScreen
+    }
+
+    package home {
+      class HomeScreen
+      class HomeViewModel
+    }
+
+    package login {
+      class LoginScreen
+      class LoginViewModel
+    }
+
+    package profile {
+      class ProfileScreen
+      class ProfileViewModel
+      class EditProfileScreen
+      class EditProfileViewModel
+    }
+
+    package register {
+      class RegisterScreen
+      class RegisterViewModel
+    }
+
+    package splash {
+      class SplashScreen
+    }
+
+    package timer {
+      class TimerScreen
+      class TimerViewModel
+    }
+
+    package wishlist {
+      class WishlistScreen
+      class WishlistPendingScreen
+      class FinishedBooksScreen
+    }
+
+    package session {
+      class AuthSessionViewModel
+      class ProgressViewModel
+    }
+
+    package theme {
+      class Color
+      class Fonts
+      class Theme
+      class Type
+    }
+  }
+}
+
+' Paquete UTILS
+package utils {
+  class ConfigureSystemBars
+  class ImageUtils
+}
+
+' MainActivity
+class MainActivity
+
+' Relaciones
+MainActivity --> MainNavHost
+MainNavHost --> Routes
+Routes --> BookDetailScreen
+Routes --> DiscoverScreen
+Routes --> HomeScreen
+Routes --> LoginScreen
+Routes --> ProfileScreen
+Routes --> EditProfileScreen
+Routes --> RegisterScreen
+Routes --> SplashScreen
+Routes --> TimerScreen
+Routes --> WishlistScreen
+Routes --> WishlistPendingScreen
+Routes --> FinishedBooksScreen
+
+' Screen y ViewModels
+BookDetailScreen --> BookDetailViewModel
+BookDetailViewModel --> BookRepository
+
+HomeScreen --> HomeViewModel
+HomeViewModel --> ReadingTimeRepository
+
+LoginScreen --> LoginViewModel
+LoginViewModel --> AuthRepository
+
+ProfileScreen --> ProfileViewModel
+ProfileViewModel --> UserPreferences
+
+EditProfileScreen --> EditProfileViewModel
+EditProfileViewModel --> AuthRepository
+
+RegisterScreen --> RegisterViewModel
+RegisterViewModel --> AuthRepository
+
+TimerScreen --> TimerViewModel
+TimerViewModel --> ReadingTimeRepository
+
+WishlistScreen --> BookRepository
+WishlistPendingScreen --> BookRepository
+FinishedBooksScreen --> BookRepository
+
+' Session ViewModels
+AuthSessionViewModel --> AuthRepository
+ProgressViewModel --> ProgressRepository
+
+ImageUtils --> EditProfileScreen
+ConfigureSystemBars --> MainActivity
+
+Book --> BookRepository
+ReadingDay --> ReadingTimeRepository
+ReadingGoal --> DailyGoalRepository
+
+@enduml
