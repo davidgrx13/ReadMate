@@ -10,5 +10,5 @@ data class Book(
     @DrawableRes val coverImage: Int,
     @DrawableRes val authorImage: Int,
     val synopsis: String,
-    val about: String // Nuevo campo
+    val about: String
 )
