@@ -27,14 +27,14 @@ class ReadingTimeRepository {
         val prefs = context.getSharedPreferences("user_prefs", Context.MODE_PRIVATE)
         val currentList = loadReadingTimes(context, userId).toMutableList()
 
-        // Si ya hay un día con esa fecha, actualizamos
+        // Si ya hay un día con esa fecha, actualiza
         val existingIndex = currentList.indexOfFirst { it.date == newDay.date }
         if (existingIndex != -1) {
             currentList[existingIndex] = newDay
         } else {
             // Si es nuevo, añadimos
             if (currentList.size >= maxDays) {
-                currentList.removeAt(0) // Quitamos el más antiguo
+                currentList.removeAt(0) // Quita el más antiguo
             }
             currentList.add(newDay)
         }

@@ -14,6 +14,7 @@ import androidx.navigation.compose.composable
 import com.example.readmatetasks.data.repository.AuthRepository
 import com.example.readmatetasks.data.repository.BookRepository
 import com.example.readmatetasks.data.repository.DailyGoalRepository
+import com.example.readmatetasks.data.repository.GeminiRepository
 import com.example.readmatetasks.data.repository.ReadingTimeRepository
 import com.example.readmatetasks.ui.screens.book.BookDetailViewModel
 import com.example.readmatetasks.ui.screens.book.BookDetailViewModelFactory
@@ -49,6 +50,8 @@ fun MainNavHost(navController: NavHostController) {
     val authSessionViewModel: AuthSessionViewModel = viewModel(
         factory = AuthSessionViewModelFactory(AuthRepository())
     )
+
+    val geminiRepository = GeminiRepository()
 
     LaunchedEffect(Unit) {
         authSessionViewModel.fetchCurrentUser()
@@ -209,7 +212,7 @@ fun MainNavHost(navController: NavHostController) {
 
             if (book != null) {
                 val viewModel: BookDetailViewModel = viewModel(
-                    factory = BookDetailViewModelFactory()
+                    factory = BookDetailViewModelFactory(geminiRepository)
                 )
 
                 timerViewModel?.let { timerVm ->
