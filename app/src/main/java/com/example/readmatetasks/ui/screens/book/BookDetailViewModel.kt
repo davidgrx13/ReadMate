@@ -7,7 +7,6 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-// El constructor ahora recibe el repositorio
 class BookDetailViewModel(private val repository: GeminiRepository) : ViewModel() {
 
     private val _curiosities = MutableStateFlow("")
@@ -22,7 +21,7 @@ class BookDetailViewModel(private val repository: GeminiRepository) : ViewModel(
 
         viewModelScope.launch {
             try {
-                // Llama al método del repositorio para obtener el flujo
+                // Llama al repo para obtener las curiosidades
                 repository.getCuriositiesStream(bookTitle, bookAuthor)
                     .collect {
                         _curiosities.value += it
